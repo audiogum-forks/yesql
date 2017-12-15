@@ -50,7 +50,7 @@
                            "Expected %d positional parameters. Got %d."
                            "Supply positional parameters as {:? [...]}"])
                     expected-positional-count actual-positional-count))))
-    (if (or (vector? initial-args) (list? initial-args)) 
+    (if (or (vector? initial-args) (list? initial-args))
       (let [[final-query final-parameters consumed-args]
             (reduce (fn [[query parameters args] token]
                       (cond
@@ -89,7 +89,7 @@
 (defn insert-handler
   [db statement-and-params call-options]
    (if (vector? (second statement-and-params))
-     (apply jdbc/db-do-prepared db statement-and-params)
+     (jdbc/db-do-prepared db true statement-and-params {:multi? true})
      (jdbc/db-do-prepared-return-keys db statement-and-params)))
 
 (defn query-handler
