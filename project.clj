@@ -1,4 +1,4 @@
-(defproject audiogum/yesql "0.5.3-3"
+(defproject audiogum/yesql "0.5.3-4"
   :description "A Clojure library for using SQL"
   :url "https://github.com/krisajenkins/yesql"
   :license {:name "Eclipse Public License"
